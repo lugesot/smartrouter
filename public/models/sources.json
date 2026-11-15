@@ -1,0 +1,21 @@
+{
+  "package": "@lobehub/icons-static-svg",
+  "version": "1.102.0",
+  "source": "https://github.com/lobehub/lobe-icons",
+  "icons": {
+    "openai": "OpenAI",
+    "claude-color": "Claude",
+    "gemini-color": "Gemini",
+    "deepseek-color": "DeepSeek",
+    "mistral-color": "Mistral",
+    "grok": "Grok",
+    "qwen-color": "Qwen",
+    "cohere-color": "Cohere",
+    "perplexity-color": "Perplexity",
+    "kimi-color": "Kimi",
+    "zhipu-color": "GLM",
+    "doubao-color": "Doubao",
+    "yi-color": "Yi",
+    "ollama": "Ollama"
+  }
+}
