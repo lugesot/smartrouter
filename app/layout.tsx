@@ -1,4 +1,5 @@
 import './globals.css';
+import '../public/select-control.css';
 import {LanguageProvider} from './components/language';
 import type {Viewport} from 'next';
 export const viewport:Viewport={themeColor:'#5546C7'};

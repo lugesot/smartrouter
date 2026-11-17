@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="商品主数据治理方案：元数据、标准管理、质量规划、模型兼容演进与发送方监控。">
+<title>商品数据治理</title>
+<style>
+:root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#182a40;background:#f4f6f8;font-size:16px;--ink:#182a40;--muted:#64748a;--border:#dce3e9;--accent:#197d76;--soft:#e5f2ed;--surface:#fff;--page:#f4f6f8}
+*{box-sizing:border-box}body{margin:0;background:var(--page);color:var(--ink)}[hidden]{display:none!important}button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}button{font:inherit;cursor:pointer}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #49aaa0;outline-offset:4px}button{color:inherit}.wrap{max-width:1360px;padding:28px 44px 36px;margin:auto}.top{display:flex;align-items:center;gap:20px;justify-content:space-between;padding-bottom:22px;border-bottom:1px solid var(--border)}.brand{display:flex;align-items:center;gap:11px;font-size:.75rem;font-weight:600;letter-spacing:1.8px}.mark{width:28px;height:28px;border:1px solid var(--accent);border-radius:8px;display:grid;grid-template-columns:repeat(2,5px);gap:4px;place-content:center}.mark i{height:5px;background:var(--accent);border-radius:1px}.top-right{display:flex;align-items:center;gap:22px}.back{font-size:18px;font-weight:700;color:var(--ink);text-decoration-line:underline;text-decoration-thickness:1px;text-underline-offset:5px;white-space:nowrap}.hero{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin:32px 0 26px}.eyebrow{font-size:.65rem;letter-spacing:2.4px;color:var(--accent);font-weight:600;margin:0 0 12px}h1{font-size:clamp(1.75rem,1.1rem + 2.2vw,2.75rem);font-weight:550;letter-spacing:-1px;line-height:1.35;margin:0 0 12px}.lead{font-size:.85rem;color:var(--muted);line-height:1.9;margin:0}.label{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--border);border-radius:6px;color:var(--muted);padding:7px 10px;font-size:.68rem;white-space:nowrap}.label i{width:5px;height:5px;background:var(--accent);border-radius:50%}.proof{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:20px;margin-top:24px;border-top:1px solid var(--border);font-size:.66rem;color:var(--muted);line-height:1.8}.proof b{color:var(--accent);font-weight:500}.details{margin-top:20px}.details summary{cursor:pointer;font-size:.74rem;color:var(--muted)}.scenario-buttons{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 14px}.scenario-buttons button{border:1px solid var(--border);border-radius:7px;background:var(--surface);padding:8px 12px;color:var(--muted);font-size:.72rem}.scenario-buttons button[aria-pressed=true]{border-color:var(--accent);background:var(--soft);color:var(--accent)}.scenario-copy{font-size:.78rem;line-height:1.9;color:var(--muted);margin:0;max-width:900px}.scenario-copy strong{color:var(--ink);font-weight:500}.detail-line{margin-top:14px;display:flex;flex-wrap:wrap;gap:7px}.detail-line code{font-family:inherit;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:5px 8px;font-size:.65rem}
+body{--ink:#e7eff5;--muted:#9badbd;--border:#2e4355;--accent:#95d7c4;--soft:#213e43;--surface:#182d3d;--page:#102130;color-scheme:dark}.journey-layout{display:grid;grid-template-columns:.8fr 1.5fr;gap:32px}.step-list{display:grid;gap:0;position:relative}.step{display:grid;grid-template-columns:35px 1fr auto;gap:12px;align-items:center;background:none;border:0;border-bottom:1px solid var(--border);padding:16px 14px;text-align:left;border-radius:0;color:var(--muted)}.step:first-child{border-top:1px solid var(--border)}.step[aria-pressed=true]{background:#94d4c313;color:var(--ink);border-inline-start:2px solid var(--accent);padding-inline-start:12px}.step-num{font-size:.67rem;font-variant-numeric:tabular-nums;color:var(--accent)}.step strong{display:block;font-size:.85rem;font-weight:500}.step small{display:block;font-size:.65rem;color:var(--muted);margin-top:6px}.step .arrow{font-size:.8rem;color:var(--accent);opacity:0}.step[aria-pressed=true] .arrow{opacity:1}.detail-panel{padding:27px;background:var(--surface);border:1px solid var(--border);border-radius:14px;min-width:0;display:flex;flex-direction:column;align-items:flex-start}.detail-panel .eyebrow{margin-bottom:10px}.detail-panel h2{font-size:1.6rem;font-weight:500;letter-spacing:-.5px;margin:0 0 14px}.detail-panel .description{font-size:.85rem;line-height:1.9;color:var(--muted);margin:0 0 20px}.detail-points{display:grid;gap:0;width:100%;margin:0;padding:0;list-style:none}.detail-points li{display:grid;grid-template-columns:18px 1fr;gap:10px;border-top:1px solid var(--border);padding:13px 0;font-size:.78rem;line-height:1.8;color:var(--muted)}.detail-points li span:first-child{color:var(--accent)}.example{margin-top:auto;padding:15px 17px;background:#102130;border:1px solid var(--border);border-radius:9px;width:100%}.example small{font-size:.62rem;color:var(--accent);letter-spacing:.4px}.example p{font-size:.76rem;line-height:1.9;color:var(--muted);margin:7px 0 0}.journey-foot{margin-top:24px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;border-top:1px solid var(--border);padding-top:18px}.journey-foot strong{font-size:.76rem;font-weight:500}.journey-foot p{font-size:.71rem;color:var(--muted);line-height:1.8;margin:8px 0 0}.journey-foot small{color:var(--accent);font-size:.62rem;letter-spacing:1px;display:block;margin-bottom:8px}
+@media(prefers-reduced-motion:no-preference){.step{transition:background-color .15s ease,color .15s ease}}
+@media(max-width:1050px){.wrap{padding:24px}.journey-layout{gap:20px;grid-template-columns:1fr 1.5fr}.top-right{gap:14px}.back{display:inline}.hero .label{display:none}}
+@media(max-width:780px){.journey-layout{grid-template-columns:1fr}.step-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.step,.step:first-child{grid-template-columns:24px 1fr;padding:13px 10px;border:1px solid var(--border);border-radius:7px;gap:4px}.step[aria-pressed=true]{border:1px solid var(--accent);padding-inline-start:10px}.step .arrow,.step small{display:none}.step strong{font-size:.75rem}.detail-panel{min-height:370px}.journey-foot{gap:15px}.top{flex-wrap:wrap}.hero{margin-top:26px}}
+@media(max-width:480px){.wrap{padding:20px 14px 26px}.brand{font-size:.65rem;letter-spacing:1px}.top-right{width:100%}.back{font-size:16px}.hero{margin-bottom:22px}.lead{font-size:.8rem}.step-list{grid-template-columns:repeat(2,minmax(0,1fr))}.detail-panel{padding:20px}.detail-panel h2{font-size:1.35rem}.journey-foot{grid-template-columns:1fr;gap:18px}.proof{gap:6px}.example{margin-top:12px}.scenario-buttons button{min-height:44px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="top"><div class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>COMMERCE / DATA GOVERNANCE</div><div class="top-right"><a class="back" href="/dataflow">数据流 ↗</a></div></header>
+<section id="journey" aria-label="商品属性治理闭环">
+<div class="hero"><div><p class="eyebrow">FROM ATTRIBUTE TO TRUSTED DELIVERY</p><h1>一次属性升级，贯穿治理全链路。</h1><p class="lead">用一条商品模型演进路径，串起标准、质量、版本与运行保障。<br>选择一个环节，查看它的治理动作与实施边界。</p></div></div>
+<div class="journey-layout"><nav class="step-list" aria-label="治理生命周期">
+<button class="step" type="button" data-step="metadata" aria-pressed="true"><span class="step-num">01</span><span><strong>定义元数据</strong><small>字段含义 / 来源 / 责任</small></span><span class="arrow" aria-hidden="true">↗</span></button>
+<button class="step" type="button" data-step="standards" aria-pressed="false"><span class="step-num">02</span><span><strong>落实标准与质量</strong><small>类型 / 规则 / 校验门禁</small></span><span class="arrow" aria-hidden="true">↗</span></button>
+<button class="step" type="button" data-step="package" aria-pressed="false"><span class="step-num">03</span><span><strong>发布商品属性包</strong><small>统一公司基础数据来源和定义</small></span><span class="arrow" aria-hidden="true">↗</span></button>
+<button class="step" type="button" data-step="consumption" aria-pressed="false"><span class="step-num">04</span><span><strong>统一消费平台</strong><small>消息推送 / 发布订阅 / Topic 规范</small></span><span class="arrow" aria-hidden="true">↗</span></button>
+<button class="step" type="button" data-step="observe" aria-pressed="false"><span class="step-num">05</span><span><strong>感知发送异常</strong><small>发布结果 / 错误 / 停滞</small></span><span class="arrow" aria-hidden="true">↗</span></button>
+<button class="step" type="button" data-step="recover" aria-pressed="false"><span class="step-num">06</span><span><strong>补偿并确认一致</strong><small>恢复依据 / 对账 / 追溯</small></span><span class="arrow" aria-hidden="true">↗</span></button>
+</nav><article class="detail-panel" aria-live="polite" aria-atomic="true"><p class="eyebrow" id="step-kicker"></p><h2 id="step-title"></h2><p class="description" id="step-description"></p><ul class="detail-points" id="step-points"></ul><div class="example"><small id="step-example-label"></small><p id="step-example"></p></div></article></div>
+<div class="journey-foot"><article><small>SCHEMA</small><strong>模型版本 ≠ 商品数据版本</strong><p>依赖包定义属性结构；具体商品的新旧变化需要独立版本依据。</p></article><article><small>DELIVERY</small><strong>发布成功 ≠ 目标落库成功</strong><p>完整和一致性校验</p></article><article><small>RECOVERY</small><strong>看板负责发现，恢复依据负责补发</strong><p>错误日志帮助定位；持久化位点或记录支撑恢复与重试。</p></article></div>
+</section>
+<details class="details"><summary>查看发送异常的三种情况</summary><div class="scenario-buttons" role="group" aria-label="发送异常场景"><button type="button" data-scenario="failed" aria-pressed="true">明确发送失败</button><button type="button" data-scenario="unknown" aria-pressed="false">超时 · 结果未知</button><button type="button" data-scenario="stalled" aria-pressed="false">无报错 · 进度停滞</button></div><p class="scenario-copy" id="scenario" aria-live="polite"></p><div class="detail-line"><code>eventId</code><code>SKU / dataVersion</code><code>sourceOffset / Topic</code><code>errorCode / retries</code><code>result / messageId</code></div></details>
+</main>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const details = {
+    metadata: { kicker: '01 / METADATA · 设计候选', title: '先定义含义，再定义字段。', description: '让商品属性具有可检索的业务解释、来源和维护责任，减少服务之间的隐式约定。', points: ['维护wiki文档：记录名称、类型、单位、缺省含义与示例。', '根据业务拆解Demandware 原始数据，重新映射或定义字段加工逻辑。', '登记消费方，识别字段变化的影响范围。', '根据关键字段的逻辑依赖关系，确定后续数据的同步顺序。'], exampleLabel: '示例字段', example: 'packageWeight：包装后重量；单位 g；缺省表示未知，不能直接解释为零。' },
+    standards: { kicker: '02 / STANDARDS & QUALITY · 设计候选', title: '标准可以执行，质量可以验证。', description: '将字段约定落实为检查规则，并明确适用场景、异常等级和处理责任。', points: ['统一 SKU、属性类型、单位、枚举和空值语义。', '定义属性规则，维护在注解并提供缺省validator', '接入前校验，异常记录隔离；修复后复检与补同步。'], exampleLabel: '示例规则 · 阈值与流程待确认', example: '重量有值时检查单位与范围；上架所需属性按业务规则校验，不能把未知值自动填成零。' },
+    package: { kicker: '03 / MODEL PACKAGE · 已确认机制', title: '统一商品模型，按版本交付。', description: '商品模型通过 Java Maven依赖包分发，存量属性不删不改，以新增属性扩展，各微服务按需升级。', points: ['公共包提供统一属性定义，减少服务各自维护模型。', '平滑升级，只增不改。', '根据业务场景提炼精简商品模型，按需保留属性，减少大字段和非必要数据的传输。'], exampleLabel: '实施边界', example: '属性包交付结构定义；新属性的实际数据，还需要上游生产与同步映射配合。' },
+    consumption: { kicker: '04 / UNIFIED CONSUMPTION PLATFORM', title: '统一消费平台', description: '统一消息推送、发布订阅管理与 Topic 命名规则，为下游系统提供一致的数据消费入口。', points: ['消息推送：统一分发商品及基础数据变更。', '发布订阅管理：统一管理发布方、订阅方与消费关系。', '统一 Topic 命名规则：规范业务域、数据对象与事件类型的命名。'], exampleLabel: '平台能力', example: '消息推送 · 发布订阅管理 · 统一 Topic 命名规则' },
+    observe: { kicker: '05 / PUBLISHER OBSERVABILITY · 设计候选', title: '既看到失败，也发现停止工作。', description: '发布端结合日志、服务状态和云端指标观察发送过程，不能只盯订阅积压或死信。', points: ['检查异步发布结果：成功、明确失败、结果未知。', '结合事件 ID、SKU、Topic、源端位点关联排查；默认日志能力需核实。', '监测错误率、延迟、服务重启，以及有源端更新却无发布进展。'], exampleLabel: '工具组合', example: '异常排查工具：Log、Trace、Metric；Grafana 统一展示与告警。' },
+    recover: { kicker: '06 / RECOVERY & RECONCILIATION · 设计候选', title: '修复之后，用对账确认结果。', description: '日志与看板帮助发现问题；可恢复位点或持久化待发送记录，才是重试和补发的依据。', points: ['保留未成功发布事件的恢复依据，核实位点提交行为。', '结果未知时重试，并通过稳定事件标识与数据版本处理重复、乱序。', '按同一批次或截止范围比较 SKU、版本与关键字段，修复后再次验证。', '上游提供补偿工具，提高数据修复效率。'], exampleLabel: '保障边界', example: '目标是可追踪、可恢复的最终一致性；Pub/Sub 接受消息，并不代表所有目标数据库已经完成写入。' }
+  };
+  function selectStep(key) {
+    const detail = details[key] || details.package;
+    $('step-kicker').textContent = detail.kicker;
+    $('step-title').textContent = detail.title;
+    $('step-description').textContent = detail.description;
+    $('step-example-label').textContent = detail.exampleLabel;
+    $('step-example').textContent = detail.example;
+    $('step-points').replaceChildren();
+    detail.points.forEach(value => { const li = document.createElement('li'); const mark = document.createElement('span'); mark.textContent = '↳'; mark.setAttribute('aria-hidden', 'true'); const copy = document.createElement('span'); copy.textContent = value; li.append(mark, copy); $('step-points').append(li); });
+    document.querySelectorAll('[data-step]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.step === key)));
+  }
+  document.querySelectorAll('[data-step]').forEach(button => button.addEventListener('click', () => selectStep(button.dataset.step)));
+  const scenarios = {
+    failed: '明确失败：权限不足、Topic 不存在或参数错误。记录失败与关联信息，告警并保留恢复依据；修复后补发。未成功进入 Pub/Sub 的消息，不会由订阅死信主题兜底。',
+    unknown: '结果未知：发布超时可能是未收到，也可能是已接受但响应丢失。保留稳定 eventId 与商品版本，允许重试，由下游幂等处理重复，不能仅依赖 Pub/Sub messageId 去重。',
+    stalled: '进度停滞：即使没有 ERROR 日志，源端持续更新但发布进度长期不变，也应告警。结合进程健康、重启、积压、源端位点和发布成功量定位原因。'
+  };
+  function selectScenario(key) { $('scenario').textContent = scenarios[key]; document.querySelectorAll('[data-scenario]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.scenario === key))); }
+  document.querySelectorAll('[data-scenario]').forEach(button => button.addEventListener('click', () => selectScenario(button.dataset.scenario)));
+  selectStep('metadata'); selectScenario('failed');
+})();
+</script>
+</body>
+</html>

@@ -9,7 +9,7 @@ npm ci
 npm run dev
 ```
 
-Open http://localhost:3000. Build validation: `npm run build`.
+Open http://localhost:4000. Build validation: `npm run build`.
 
 ## Routes and access
 
